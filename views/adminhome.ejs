@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!--FontAwesome CDN-->
+    <script src="https://kit.fontawesome.com/154244f28a.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+            integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
+            crossorigin="anonymous"
+    />
+
+    <!--Chartjs CDN-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.0.1/chart.min.js"
+            integrity="sha512-tQYZBKe34uzoeOjY9jr3MX7R/mo7n25vnqbnrkskGr4D6YOoPYSpyafUAzQVjV6xAozAqUFIEFsCO4z8mnVBXA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="/css/adminhome.css">
+
+    <title>Home Page</title>
+</head>
+<body>
+<!--Navbar-->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <div class="app-title">
+            <h2>RapidMart</h2>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav" id="navdata">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/adminhome"
+                    ><i class="fa-solid fa-house"></i> Home<span class="sr-only">(current)</span></a
+                    >
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/profile"
+                    ><i class="fa-solid fa-id-card"></i> Admin Profile <span class="sr-only">(current)</span></a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--EndNavbar-->
+
+<!--Info Bulletin-->
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="card-header text-white">Sub-Divisions</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <a class="text-decoration-none text-dark" href="/staff">
+                                <div class="card my-card text-center p-3">
+                                    <h4>Staff <i class="fa-sharp fa-solid fa-users"></i></h4>
+                                    <h3>2</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a class="text-decoration-none text-dark" href="/product">
+                                <div class="card my-card text-center p-3">
+                                    <h4>Products <i class="fa-solid fa-box"></i></h4>
+                                    <h3>10</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-4">
+                            <a class="text-decoration-none text-dark" href="/order">
+                                <div class="card my-card text-center p-3">
+                                    <h4>Orders <i class="fa-solid fa-truck-fast"></i></h4>
+                                    <h3>5</h3>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row my-4">
+                <div class="col-md-6 mb-4">
+                    <div class="bg-white p-3">
+                        <canvas id="myChart1"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="bg-white p-3">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            const ctx1 = document.getElementById('myChart1').getContext('2d');
+            const ctx2 = document.getElementById('myChart').getContext('2d');
+        
+            new Chart(ctx1, {
+                type: 'pie',
+                data: {
+                    labels: ['Pencils', 'Bags', 'Writing Pad', 'Eraser', 'Ruler', 'Geometry Box'],
+                    datasets: [{
+                        label: 'Sales Statistics',
+                        data: [30, 5, 8, 25, 10, 5],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false
+                }
+            });
+        
+            new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: ['Pencils', 'Bags', 'Writing Pad', 'Eraser', 'Ruler', 'Geometry Box'],
+                    datasets: [{
+                        label: 'Sales Statistics',
+                        data: [30, 5, 8, 25, 10, 5],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+<!--End Graphs-->
+
+
+</body>
+</html>

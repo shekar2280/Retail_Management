@@ -1,0 +1,112 @@
+body {
+    background-image: url('https://wallpapercave.com/wp/wp10044813.jpg');
+    background-size: 100vw 100vh;
+    overflow: hidden;
+}
+
+.rows {
+    display: flex;
+    padding-top: 15px;
+}
+.col {
+    padding-top: 5px;
+    width: 100px;
+}
+
+.my-card:hover {
+    transform: scale(1.1);
+    transition: 0.2s ease-in-out;
+}
+
+nav {
+    height: 90px;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#cname {
+    font-size: 35px;
+    font-weight: bold;
+    position: absolute;
+    left: 25px;
+}
+
+#navdata {
+    margin-left: auto;
+    padding-left: 100px;
+    display: flex;
+}
+
+#navdata li {
+    padding-left: 40px;
+}
+
+.app-title {
+    margin-left: 10px;
+    color: white;
+}
+
+.navbar {
+    background-color: rgb(0, 0, 0);
+    height: 62px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-link{
+    color: white;
+}
+
+a:hover{
+    color: bisque;
+}
+
+.card-header{
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: 20px;
+}
+
+
+canvas {
+    width: 500px !important;
+    height: 380px !important; /* Ensure both charts have the same height */
+}
+
+@media (max-width: 768px) {
+    .col-md-6 {
+        margin-bottom: 20px; /* Add space between graphs on small screens */
+    }
+}
+.chart-container {
+    position: relative;
+    width: 100px; /* Full width of the parent */
+    height: 300px; /* Adjust height as needed */
+}
+
+.chart-container.large {
+    height: 400px; /* Larger height for the second chart */
+}
+
+
+/* Add this to your CSS file */
+.my-card {
+    margin-bottom: 0; /* Remove the margin at the bottom of the card */
+}
+
+.bg-white {
+    padding: 0; /* Remove padding inside the graph container */
+}
+
+.row.my-4 {
+    margin-bottom: 0; /* Remove the margin at the bottom of the row */
+}
+
+.col-md-6.mb-4 {
+    margin-bottom: 0; /* Remove margin at the bottom of the columns */
+}
